@@ -1,69 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset=UTF-8>
-	<title>FOX Publish Stuff</title>
-	<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="./styles/style.css">
+  <meta charset=UTF-8>
+  <title>FOX Publish Stuff</title>
+  <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="./styles/style.css">
 </head>
 <body>
-	<div class="container">
+  <div class="container">
 
-		<h2>FOX Publish stuff</h2>
-		<hr>
+    <h2>FOX Publish stuff</h2>
+    <hr>
 
-		<ul class="nav nav-tabs" role="tablist">
-	    <li role="presentation" class="active"><a href="#sublime" aria-controls="sublime" role="tab" data-toggle="tab">Sublime Text</a></li>
-	    <li role="presentation"><a href="#papirfly" aria-controls="papirfly" role="tab" data-toggle="tab">Flash/Papirfly</a></li>
-	  </ul>
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#sublime" aria-controls="sublime" role="tab" data-toggle="tab">Sublime Text</a>
+      </li>
+      <li role="presentation">
+        <a href="#papirfly" aria-controls="papirfly" role="tab" data-toggle="tab">Flash/Papirfly</a>
+      </li>
+    </ul>
 
-	  <div class="tab-content">
-	    <div role="tabpanel" class="tab-pane active" id="sublime">
-				<h3>Sublime Text</h3>
-				<h4>Package Control</h4>
-				<p>You need to have a package called Package Control installed. This is a plugin for Sublime Text that manages other packages for you. From Package Control you can manage (install/uninstall/update and much more) all your sublime plugins. Here’s how to get started:</p>
-				<ul>
-					<li>Open Sublime Text (2 or 3).</li>
-					<li>Go to <code>View-&gt;Show Console</code></li>
-					<li>Visit <a href="http://packagecontrol.io/installation/">packagecontrol.io</a> and copy the text from the corresponding tab (sublime text 2 or 3).</li>
-					<li>Copy selected text and paste into Sublime Text console (the field at bottom of Sublime Text Window that appeared during step two).</li>
-					<li>Hit <code>Enter</code>, wait a couple of seconds and you should see a message saying Package Control has been installed.</li>
-					<li>(Optionally) go to <code>View-&gt;Hide Console</code> to free up screen real estate.</li>
-				</ul>
-				<h4>FOX Repo</h4>
-				<p>Add a new repository to package control:</p>
-				<ul>
-					<li>In Sublime Text hit <code>Ctrl+Shift+P</code> (or <code>Cmd+Shift+P</code> on Mac).</li>
-					<li>Type in <code>add repository</code>.</li>
-					<li>You should see a list of options and one that says “Package Control: Add Repository”. This is the one.</li>
-					<li>Hit <code>Enter</code>.</li>
-					<li>A textfield reveals towards the bottom of the window Here you should type or copy-paste this url <code>https://raw.githubusercontent.com/helgeFox/FOX-sublime-repo/master/repository.json</code> into it and hit <code>Enter</code>.</li>
-					<li>All Sublime Text packages specific to FOX Publish employees should now be available for installation through package control, as any other package, though some packages are dependent on a specific version of Sublime Text. Here is a list of them (and their dependencies).
-						<ul>
-							<li><a href="https://github.com/helgeFox/fox-indent-xml">IndentXml</a> any</li>
-							<li><a href="https://github.com/helgeFox/fox-getimportxml">GetImportXml</a> any</li>
-						</ul>
-					</li>
-				</ul>
-	    </div>
-	    <div role="tabpanel" class="tab-pane" id="papirfly">
-	    	<h3>Flash/Papirfly</h3>
-	    	<div class="well">
-	    		Dra 
-	    		<a href="javascript:(function(){function%20loadScript(a,b){var%20c=document.createElement('script');c.type='text/javascript';c.src=a;var%20d=document.getElementsByTagName('head')[0],done=false;c.onload=c.onreadystatechange=function(){if(!done&&(!this.readyState||this.readyState=='loaded'||this.readyState=='complete')){done=true;b()}};d.appendChild(c)}%20loadScript('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js',function(){loadScript('http://admin.foxpublish.no/miscellaneous/foxTestParams/foxTestParams.js?v=1.1',function(){doIt()})})})()">
-	    		FoxTestParams</a> til bookmerkene dine eller der du måtte ønske å ha snarveien.
-	    	</div>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="sublime">
+        <h3>Sublime Text</h3>
+        <h4>Package Control</h4>
+        <p>You need to have a package called Package Control installed. This is a plugin for Sublime Text that manages other packages for you. From Package Control you can manage (install/uninstall/update and much more) all your sublime plugins. Here’s how to get started:</p>
+        <ul>
+          <li>Open Sublime Text (2 or 3).</li>
+          <li>Go to <code>View-&gt;Show Console</code></li>
+          <li>Visit <a href="http://packagecontrol.io/installation/">packagecontrol.io</a> and copy the text from the corresponding tab (sublime text 2 or 3).</li>
+          <li>Copy selected text and paste into Sublime Text console (the field at bottom of Sublime Text Window that appeared during step two).</li>
+          <li>Hit <code>Enter</code>, wait a couple of seconds and you should see a message saying Package Control has been installed.</li>
+          <li>(Optionally) go to <code>View-&gt;Hide Console</code> to free up screen real estate.</li>
+        </ul>
+        <h4>FOX Repo</h4>
+        <p>Add a new repository to package control:</p>
+        <ul>
+          <li>In Sublime Text hit <code>Ctrl+Shift+P</code> (or <code>Cmd+Shift+P</code> on Mac).</li>
+          <li>Type in <code>add repository</code>.</li>
+          <li>You should see a list of options and one that says “Package Control: Add Repository”. This is the one.</li>
+          <li>Hit <code>Enter</code>.</li>
+          <li>A textfield reveals towards the bottom of the window Here you should type or copy-paste this url <code>https://raw.githubusercontent.com/helgeFox/FOX-sublime-repo/master/repository.json</code> into it and hit <code>Enter</code>.</li>
+          <li>All Sublime Text packages specific to FOX Publish employees should now be available for installation through package control, as any other package, though some packages are dependent on a specific version of Sublime Text. Here is a list of them (and their dependencies).
+            <ul>
+              <li><a href="https://github.com/helgeFox/fox-indent-xml">IndentXml</a> any</li>
+              <li><a href="https://github.com/helgeFox/fox-getimportxml">GetImportXml</a> any</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="papirfly">
+        <h3>Flash/Papirfly</h3>
+        <div class="well">
+          Dra 
+          <a href="javascript:(function(){function%20loadScript(a,b){var%20c=document.createElement('script');c.type='text/javascript';c.src=a;var%20d=document.getElementsByTagName('head')[0],done=false;c.onload=c.onreadystatechange=function(){if(!done&&(!this.readyState||this.readyState=='loaded'||this.readyState=='complete')){done=true;b()}};d.appendChild(c)}%20loadScript('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js',function(){loadScript('http://admin.foxpublish.no/miscellaneous/foxTestParams/foxTestParams.js?v=1.1',function(){doIt()})})})()">
+            FoxTestParams</a> til bookmerkene dine eller der du måtte ønske å ha snarveien.
+          </div>
+        </div>
+      </body>
+      </html>
+
     </div>
-</body>
-</html>
 
-	    </div>
+  </div>
+</div><!-- /container -->
 
-	  </div>
-	</div><!-- /container -->
-
-	<script src="./bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
