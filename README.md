@@ -13,7 +13,7 @@ You need to have a package called Package Control installed. This is a plugin fo
 * Hit `Enter`, wait a couple of seconds and you should see a message saying Package Control has been installed.
 * (Optionally) go to `View->Hide Console` to free up screen real estate.
 
-[packagecontrol.io]: http://packagecontrol.io/installation/
+[packagecontrol.io]: http://packagecontrol.io/installation
 
 ####FOX Repo
 
