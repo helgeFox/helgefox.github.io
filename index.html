@@ -20,6 +20,9 @@
       <li role="presentation">
         <a href="#papirfly" aria-controls="papirfly" role="tab" data-toggle="tab">Flash/Papirfly</a>
       </li>
+      <li role="presentation">
+        <a href="#html5" aria-controls="html5" role="tab" data-toggle="tab">HTML5</a>
+      </li>
     </ul>
 
     <div class="tab-content">
@@ -59,12 +62,19 @@
             FoxTestParams</a> til bookmerkene dine eller der du måtte ønske å ha snarveien.
           </div>
         </div>
-      </body>
-      </html>
+      <div role="tabpanel" class="tab-pane" id="html5">
+        <h3>HTML5</h3>
+        <p>For å enkelt åpne html5-editoren på localhost:3000 i ny fane</p>
+        <div class="well">
+          Dra 
+          <a href='javascript: var a=document.querySelector("iframe");if(a){var b=a.getAttribute("src"),c=b.substr(b.indexOf("editor/?")+"editor/".length),d="http://localhost:3000/"+c,e=window.open(d,"_blank");e.focus()}'>
+            openLocalhost
+          </a> til bookmerkene dine eller der du måtte ønske å ha snarveien.
+        </div>
+      </div>
 
-    </div>
+    </div><!-- /tab-container -->
 
-  </div>
 </div><!-- /container -->
 
 <script src="./bower_components/jquery/dist/jquery.min.js"></script>
