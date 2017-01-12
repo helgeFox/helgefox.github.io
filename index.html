@@ -67,7 +67,7 @@
         <p>For å enkelt åpne html5-editoren på localhost:3000 i ny fane</p>
         <div class="well">
           Dra 
-          <a href='javascript: var a=document.querySelector("iframe");if(a){var b=a.getAttribute("src"),c=b.substr(b.indexOf("editor/?")+"editor/".length),d="http://localhost:3000/"+c,e=window.open(d,"_blank");e.focus()}'>
+          <a href='javascript: var a="",b=document.querySelector("iframe");if(b?a=b.getAttribute("src"):location.host.indexOf("foxpublish.net")>=0&&(a=location.href),a&&a.length>0&&a.indexOf("editor/?")>=0){var c=a.substr(a.indexOf("editor/?")+"editor/".length),d="http://localhost:3000/"+c,e=window.open(d,"_blank");e.focus()}'>
             openLocalhost
           </a> til bookmerkene dine eller der du måtte ønske å ha snarveien.
         </div>
