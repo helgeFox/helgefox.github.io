@@ -3,7 +3,7 @@
 
 ### Sublime Text
 
-####Package Control
+#### Package Control
 
 You need to have a package called Package Control installed. This is a plugin for Sublime Text that manages other packages for you. From Package Control you can manage (install/uninstall/update and much more) all your sublime plugins. Here's how to get started:
 * Open Sublime Text (2 or 3).
@@ -15,7 +15,7 @@ You need to have a package called Package Control installed. This is a plugin fo
 
 [packagecontrol.io]: http://packagecontrol.io/installation
 
-####FOX Repo
+#### FOX Repo
 
 Add a new repository to package control:
 * In Sublime Text hit `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac).
