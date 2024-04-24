@@ -79,6 +79,10 @@
             <h4>Bookmarklets</h4>
           </div>
           <div class="card-body">
+            <a class="btn btn-outline-secondary me-2" href="javascript: !function()%7Bvar%20e%2Ct%3Ddocument.querySelector(%22iframe%5Bsrc%5D%22)%2Cn%3Dt%3Ft.getAttribute(%22src%22)%3Alocation.href%3B(n%26%26n.length%3E0%26%26n.indexOf(%22%23create%2F%22)%3E%3D0%26%26(e%3Dn.replace(%22%23create%2F%22%2C%22%23extended%2F%22))%2Ce%26%26e.length%3E0)%26%26window.open(e%2C%22_blank%22).focus()%7D()%3B">
+              OpenExtended
+            </a>
+            |
             <a class="btn btn-outline-secondary me-2" href="javascript: var a='',b=document.querySelector('body > iframe[src]');if(b?a=b.getAttribute('src'):location.host.indexOf('vitecnext.no')>=0&&(a=location.href),a&&a.length>0&&a.indexOf('editor/')>=0){var c=a.substr(a.indexOf('editor/')+'editor/'.length),d='http://localhost:3000/'+c,e=window.open(d,'_blank');e.focus()}">
               OpenLocalhost
             </a>
