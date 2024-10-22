@@ -14,14 +14,159 @@
 
     <nav class="my-5">
       <div class="nav nav-tabs" role="tablist">
-        <button class="nav-link active" data-bs-target="#sublime" aria-controls="sublime" role="tab" data-bs-toggle="tab">Sublime Text</button>
+        <button class="nav-link active" data-bs-target="#html5" aria-controls="html5" role="tab" data-bs-toggle="tab">HTML5-Editor</button>
+        <button class="nav-link" data-bs-target="#sublime" aria-controls="sublime" role="tab" data-bs-toggle="tab">Sublime Text</button>
         <button class="nav-link" data-bs-target="#papirfly" aria-controls="papirfly" role="tab" data-bs-toggle="tab">Publish</button>
-        <button class="nav-link" data-bs-target="#html5" aria-controls="html5" role="tab" data-bs-toggle="tab">HTML5</button>
       </div>
     </nav>
 
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane fade show active" id="sublime">
+      <div role="tabpanel" class="tab-pane fade show active" id="html5">
+        <div class="card bg-light">
+          <div class="card-header">
+            <h4>Bookmarklets
+              <span class="text-body-secondary fs-5">
+                Dra-og-slipp til favorites/bookmarks baren din
+              </span>
+            </h4>
+          </div>
+          <div class="card-body">
+            <div class="container">
+              <h5 class="pt-2">Malhåndtering</h5>
+              <hr>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+                <div class="col pb-3">
+                  <a class="btn btn-outline-secondary" href="javascript: !function(){var e,r=(e=document.querySelector('iframe[src]'))?e.getAttribute('src'):location.href;href&&href.length>0&&href.indexOf('#create')>=0&&(r=href.replace('#create/','#extended/')),r&&r.length>=0&&window.open(r,'_blank').focus()}()">
+                    <!--
+                      !(function(){
+                          function getCurUrl() {
+                              var iframe=document.querySelector("iframe[src]"),
+                                  href = iframe ? iframe.getAttribute("src") : location.href
+                              return href
+                          }
+                          var result = getCurUrl()
+                          if (href && href.length > 0 && href.indexOf('#create') >= 0)
+                              result=href.replace("#create/","#extended/")
+                          if (result && result.length >= 0)
+                              window.open(result,"_blank").focus()
+                      }())
+                    -->
+                    ✏️TemplateManager
+                  </a>
+                  <br>
+                  <span class="text-body-secondary">
+                    Åpner malen i TM (nytt vindu)
+                  </span>
+                </div>
+                <div class="col pb-3">
+                  <a class="btn btn-outline-secondary" href="javascript: !function(){var e=location.search,t='debug-translation-keys=true',a=document.querySelector('body > iframe[src]');a?(0<=(e=a.getAttribute('src')).indexOf('debug-translation-keys')?e=e.replace(/debug-translation-keys=(true|false)/,t):0<=e.indexOf('?')&&(e=e.replace(/\?/,'?'+t+'&')),a.setAttribute('src',e)):(0<=e.indexOf('debug-translation-keys')?e=e.replace(/debug-translation-keys=(true|false)/,t):e+='&'+t,location.search=e)}();">
+                    👓TranslationKeys
+                  </a>
+                  <br>
+                  <span class="text-body-secondary">
+                    Reloader malen med synlige TranslationKeys
+                  </span>
+                </div>
+                <div class="col pb-3">
+                  <a class="btn btn-outline-secondary" href="javascript: !function(){var e=location.search,t='admin_override_locked_pageitems=true',a=document.querySelector('body > iframe[src]');a?(0<=(e=a.getAttribute('src')).indexOf('admin_override_locked_pageitems')?e=e.replace(/admin_override_locked_pageitems=(true|false)/,t):0<=e.indexOf('?')&&(e=e.replace(/\?/,'?'+t+'&')),a.setAttribute('src',e)):(0<=e.indexOf('admin_override_locked_pageitems')?e=e.replace(/admin_override_locked_pageitems=(true|false)/,t):e+='&'+t,location.search=e)}();">
+                    🔓UnlockTextframes
+                  </a>
+                  <br>
+                  <span class="text-body-secondary">
+                    Reloader malen med ulåste tekstfelter
+                  </span>
+                </div>
+                <div class="col pb-3">
+                  <a href="javascript: !function(e,i){function t(e){var i=new URL(e);if(i)return i.hash.substr(i.hash.indexOf('/')+1)}var n,o=e.document.querySelector('iframe'),l='debug';i.indexOf('://publish.megler.local')>0&&(l='dev'),i.indexOf('://publish.qa.vitecnext.no')>0&&(l='qa'),i.indexOf('://publish.vitecnext.no')>0&&(l='prod'),o&&(n=t(o.getAttribute('src'))),n||(n=t(e.location.href)),n&&e.open(`${{debug:'https://localhost:7066',dev:'http://invoice-publish.megler.local',qa:'https://invoice-publish.qa.vitecnext.no',prod:'https://invoice-publish.vitecnext.no'}[l]}/Extras/Idml?guid=${n}&handler=Download`)}(window,window.location.href);" class="btn btn-outline-secondary"
+                  >
+                    📂DownloadIdml
+                  </a>
+                  <br>
+                  <span class="text-body-secondary">
+                    Laster ned IDML-filen (du må være innlogget på admin for at den skal virke)
+                  </span>
+                </div>
+                <div class="col pb-3">
+                  <a href="javascript: !function(e){function t(e){var t=new URL(e);if(t)return t.hash.substr(t.hash.indexOf('/')+1)}var n,o=document.querySelector('iframe');if(o&&(n=t(o.getAttribute('src'))),n||(n=t(e.location.href)),n){var r=e.document.createElement('input');e.document.body.appendChild(r),r.value=n,r.select(),e.document.execCommand('Copy')}}(window);"
+                       class="btn btn-outline-secondary">
+                    ➰CopyGUID
+                  </a>
+                  <br>
+                  <span class="text-body-secondary">
+                    Kopierer GUID for gjeldende mal (virker ikke i Create)
+                  </span>
+                </div>
+              </div>
+              <h5 class="pt-4">Utvikling</h5>
+              <hr>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+                <div class="col pb-3">
+                  <a class="btn btn-outline-secondary" href="javascript: !function(){var t={action:'open'},o='',i=document.querySelector('body > iframe[src]');if(i?o=i.getAttribute('src'):location.host.indexOf('vitecnext.no')>=0&&(o=location.href),o&&o.length>0&&o.indexOf('editor/')>=0){var n='http://localhost:3000/'+o.substr(o.indexOf('editor/')+7);'clipboard'===t.action?navigator.clipboard.writeText(n).then(alert.bind(null,'URL Copied!')):e=window.open(n,'_blank'),e.focus()}}()">
+                    <!--
+                      (function() {
+                          var o = {}
+                          o['action'] = 'open'
+                          var href = "",
+                            iframe = document.querySelector("body > iframe[src]")
+                          if (iframe)
+                              href = iframe.getAttribute('src')
+                          else if (location.host.indexOf("vitecnext.no") >= 0)
+                              href = location.href
+                          if (href && href.length > 0 && href.indexOf("editor/") >= 0) {
+                            var querystring = href.substr(href.indexOf("editor/") + "editor/".length),
+                              newUrl = "http://localhost:3000/" + querystring
+                            if (o['action'] === 'clipboard')
+                              navigator.clipboard.writeText(newUrl).then(alert.bind(null, 'URL Copied!'))
+                            else
+                              e = window.open(newUrl, "_blank");
+                            e.focus();
+                          }
+                      }())
+                    -->
+                    🪄Localhost
+                  </a>
+                  <br>
+                  <span class="text-body-secondary">
+                    Åpner malen på localhost
+                  </span>
+                </div>
+                <div class="col pb-3">
+                  <a class="btn btn-outline-secondary" href="javascript: !function(){var t={action:'clipboard'},o='',i=document.querySelector('body > iframe[src]');if(i?o=i.getAttribute('src'):location.host.indexOf('vitecnext.no')>=0&&(o=location.href),o&&o.length>0&&o.indexOf('editor/')>=0){var n='http://localhost:3000/'+o.substr(o.indexOf('editor/')+7);'clipboard'===t.action?navigator.clipboard.writeText(n).then(alert.bind(null,'URL Copied!')):e=window.open(n,'_blank'),e.focus()}}()">
+                    <!--
+                      (function() {
+                          var o = {}
+                          o['action'] = 'clipboard'
+                          var href = "",
+                            iframe = document.querySelector("body > iframe[src]")
+                          if (iframe)
+                              href = iframe.getAttribute('src')
+                          else if (location.host.indexOf("vitecnext.no") >= 0)
+                              href = location.href
+                          if (href && href.length > 0 && href.indexOf("editor/") >= 0) {
+                            var querystring = href.substr(href.indexOf("editor/") + "editor/".length),
+                              newUrl = "http://localhost:3000/" + querystring
+                            if (o['action'] === 'clipboard')
+                              navigator.clipboard.writeText(newUrl).then(alert.bind(null, 'URL Copied!'))
+                            else
+                              e = window.open(newUrl, "_blank");
+                            e.focus();
+                          }
+                      }())
+                    -->
+                    ✳️CopyLocalhost
+                  </a>
+                  <br>
+                  <span class="text-body-secondary">
+                    Kopierer localhost-url til clipboard
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div role="tabpanel" class="tab-pane fade" id="sublime">
         <h3 class="mb-4">Sublime Text</h3>
         <div class="card bg-light mb-4">
           <div class="card-header">
@@ -61,6 +206,7 @@
           </div>
         </div>
       </div>
+
       <div role="tabpanel" class="tab-pane fade" id="papirfly">
         <div class="card bg-light">
           <div class="card-header">
@@ -69,103 +215,6 @@
           <div class="card-body">
             <p>
               Ikkeno her foreløpig (var Papirfly/Flash - trengs ikke mer)
-            </p>
-          </div>
-        </div>
-      </div>
-      <div role="tabpanel" class="tab-pane fade" id="html5">
-        <div class="card bg-light">
-          <div class="card-header">
-            <h4>Bookmarklets</h4>
-          </div>
-          <div class="card-body">
-            <a class="btn btn-outline-secondary me-2" href="javascript: !function(){var e,r=(e=document.querySelector('iframe[src]'))?e.getAttribute('src'):location.href;href&&href.length>0&&href.indexOf('#create')>=0&&(r=href.replace('#create/','#extended/')),r&&r.length>=0&&window.open(r,'_blank').focus()}()">
-              <!--
-                !(function(){
-                    function getCurUrl() {
-                        var iframe=document.querySelector("iframe[src]"),
-                            href = iframe ? iframe.getAttribute("src") : location.href
-                        return href
-                    }
-                    var result = getCurUrl()
-                    if (href && href.length > 0 && href.indexOf('#create') >= 0)
-                        result=href.replace("#create/","#extended/")
-                    if (result && result.length >= 0)
-                        window.open(result,"_blank").focus()
-                }())
-              -->
-              ✏️OpenExtended
-            </a>
-            |
-            <a class="btn btn-outline-secondary me-2" href="javascript: !function(){var t={action:'open'},o='',i=document.querySelector('body > iframe[src]');if(i?o=i.getAttribute('src'):location.host.indexOf('vitecnext.no')>=0&&(o=location.href),o&&o.length>0&&o.indexOf('editor/')>=0){var n='http://localhost:3000/'+o.substr(o.indexOf('editor/')+7);'clipboard'===t.action?navigator.clipboard.writeText(n).then(alert.bind(null,'URL Copied!')):e=window.open(n,'_blank'),e.focus()}}()">
-              <!--
-                (function() {
-                    var o = {}
-                    o['action'] = 'open'
-                    var href = "",
-                      iframe = document.querySelector("body > iframe[src]")
-                    if (iframe)
-                        href = iframe.getAttribute('src')
-                    else if (location.host.indexOf("vitecnext.no") >= 0)
-                        href = location.href
-                    if (href && href.length > 0 && href.indexOf("editor/") >= 0) {
-                      var querystring = href.substr(href.indexOf("editor/") + "editor/".length),
-                        newUrl = "http://localhost:3000/" + querystring
-                      if (o['action'] === 'clipboard')
-                        navigator.clipboard.writeText(newUrl).then(alert.bind(null, 'URL Copied!'))
-                      else
-                        e = window.open(newUrl, "_blank");
-                      e.focus();
-                    }
-                }())
-              -->
-              🪄OpenLocalhost
-            </a>
-            |
-            <a class="btn btn-outline-secondary me-2" href="javascript: !function(){var t={action:'clipboard'},o='',i=document.querySelector('body > iframe[src]');if(i?o=i.getAttribute('src'):location.host.indexOf('vitecnext.no')>=0&&(o=location.href),o&&o.length>0&&o.indexOf('editor/')>=0){var n='http://localhost:3000/'+o.substr(o.indexOf('editor/')+7);'clipboard'===t.action?navigator.clipboard.writeText(n).then(alert.bind(null,'URL Copied!')):e=window.open(n,'_blank'),e.focus()}}()">
-              <!--
-                (function() {
-                    var o = {}
-                    o['action'] = 'clipboard'
-                    var href = "",
-                      iframe = document.querySelector("body > iframe[src]")
-                    if (iframe)
-                        href = iframe.getAttribute('src')
-                    else if (location.host.indexOf("vitecnext.no") >= 0)
-                        href = location.href
-                    if (href && href.length > 0 && href.indexOf("editor/") >= 0) {
-                      var querystring = href.substr(href.indexOf("editor/") + "editor/".length),
-                        newUrl = "http://localhost:3000/" + querystring
-                      if (o['action'] === 'clipboard')
-                        navigator.clipboard.writeText(newUrl).then(alert.bind(null, 'URL Copied!'))
-                      else
-                        e = window.open(newUrl, "_blank");
-                      e.focus();
-                    }
-                }())
-              -->
-              ✳️CopyLocalhost
-            </a>
-            |
-            <a class="btn btn-outline-secondary mx-2" href="javascript: !function(){var e=location.search,t='debug-translation-keys=true',a=document.querySelector('body > iframe[src]');a?(0<=(e=a.getAttribute('src')).indexOf('debug-translation-keys')?e=e.replace(/debug-translation-keys=(true|false)/,t):0<=e.indexOf('?')&&(e=e.replace(/\?/,'?'+t+'&')),a.setAttribute('src',e)):(0<=e.indexOf('debug-translation-keys')?e=e.replace(/debug-translation-keys=(true|false)/,t):e+='&'+t,location.search=e)}();">
-              👓ShowTranslationKeys
-            </a>
-            |
-            <a class="btn btn-outline-secondary mx-2" href="javascript: !function(){var e=location.search,t='admin_override_locked_pageitems=true',a=document.querySelector('body > iframe[src]');a?(0<=(e=a.getAttribute('src')).indexOf('admin_override_locked_pageitems')?e=e.replace(/admin_override_locked_pageitems=(true|false)/,t):0<=e.indexOf('?')&&(e=e.replace(/\?/,'?'+t+'&')),a.setAttribute('src',e)):(0<=e.indexOf('admin_override_locked_pageitems')?e=e.replace(/admin_override_locked_pageitems=(true|false)/,t):e+='&'+t,location.search=e)}();">
-              🔓UnlockLockedTextframes
-            </a>
-            |
-            <a href="javascript: !function(e,i){function t(e){var i=new URL(e);if(i)return i.hash.substr(i.hash.indexOf('/')+1)}var n,o=e.document.querySelector('iframe'),l='debug';i.indexOf('://publish.megler.local')>0&&(l='dev'),i.indexOf('://publish.qa.vitecnext.no')>0&&(l='qa'),i.indexOf('://publish.vitecnext.no')>0&&(l='prod'),o&&(n=t(o.getAttribute('src'))),n||(n=t(e.location.href)),n&&e.open(`${{debug:'https://localhost:7066',dev:'http://invoice-publish.megler.local',qa:'https://invoice-publish.qa.vitecnext.no',prod:'https://invoice-publish.vitecnext.no'}[l]}/Extras/Idml?guid=${n}&handler=Download`)}(window,window.location.href);" class="btn btn-outline-secondary mx-2"
-            >
-              📂DownloadIdml
-            </a>
-            |
-            <a href="javascript: !function(e){function t(e){var t=new URL(e);if(t)return t.hash.substr(t.hash.indexOf('/')+1)}var n,o=document.querySelector('iframe');if(o&&(n=t(o.getAttribute('src'))),n||(n=t(e.location.href)),n){var r=e.document.createElement('input');e.document.body.appendChild(r),r.value=n,r.select(),e.document.execCommand('Copy')}}(window);"
-                 class="btn btn-outline-secondary mx-2">
-              ➰CopyGUID
-            </a>
-            <p>
-              Drag-and-drop these to your favorites/bookmarks bar
             </p>
           </div>
         </div>
