@@ -79,30 +79,90 @@
             <h4>Bookmarklets</h4>
           </div>
           <div class="card-body">
-            <a class="btn btn-outline-secondary me-2" href="javascript: !function()%7Bvar%20e%2Ct%3Ddocument.querySelector(%22iframe%5Bsrc%5D%22)%2Cn%3Dt%3Ft.getAttribute(%22src%22)%3Alocation.href%3B(n%26%26n.length%3E0%26%26n.indexOf(%22%23create%2F%22)%3E%3D0%26%26(e%3Dn.replace(%22%23create%2F%22%2C%22%23extended%2F%22))%2Ce%26%26e.length%3E0)%26%26window.open(e%2C%22_blank%22).focus()%7D()%3B">
-              OpenExtended
+            <a class="btn btn-outline-secondary me-2" href="javascript: !function(){var e,r=(e=document.querySelector('iframe[src]'))?e.getAttribute('src'):location.href;href&&href.length>0&&href.indexOf('#create')>=0&&(r=href.replace('#create/','#extended/')),r&&r.length>=0&&window.open(r,'_blank').focus()}()">
+              <!--
+                !(function(){
+                    function getCurUrl() {
+                        var iframe=document.querySelector("iframe[src]"),
+                            href = iframe ? iframe.getAttribute("src") : location.href
+                        return href
+                    }
+                    var result = getCurUrl()
+                    if (href && href.length > 0 && href.indexOf('#create') >= 0)
+                        result=href.replace("#create/","#extended/")
+                    if (result && result.length >= 0)
+                        window.open(result,"_blank").focus()
+                }())
+              -->
+              ✏️OpenExtended
             </a>
             |
-            <a class="btn btn-outline-secondary me-2" href="javascript: var a='',b=document.querySelector('body > iframe[src]');if(b?a=b.getAttribute('src'):location.host.indexOf('vitecnext.no')>=0&&(a=location.href),a&&a.length>0&&a.indexOf('editor/')>=0){var c=a.substr(a.indexOf('editor/')+'editor/'.length),d='http://localhost:3000/'+c,e=window.open(d,'_blank');e.focus()}">
-              OpenLocalhost
+            <a class="btn btn-outline-secondary me-2" href="javascript: !function(){var t={action:'open'},o='',i=document.querySelector('body > iframe[src]');if(i?o=i.getAttribute('src'):location.host.indexOf('vitecnext.no')>=0&&(o=location.href),o&&o.length>0&&o.indexOf('editor/')>=0){var n='http://localhost:3000/'+o.substr(o.indexOf('editor/')+7);'clipboard'===t.action?navigator.clipboard.writeText(n).then(alert.bind(null,'URL Copied!')):e=window.open(n,'_blank'),e.focus()}}()">
+              <!--
+                (function() {
+                    var o = {}
+                    o['action'] = 'open'
+                    var href = "",
+                      iframe = document.querySelector("body > iframe[src]")
+                    if (iframe)
+                        href = iframe.getAttribute('src')
+                    else if (location.host.indexOf("vitecnext.no") >= 0)
+                        href = location.href
+                    if (href && href.length > 0 && href.indexOf("editor/") >= 0) {
+                      var querystring = href.substr(href.indexOf("editor/") + "editor/".length),
+                        newUrl = "http://localhost:3000/" + querystring
+                      if (o['action'] === 'clipboard')
+                        navigator.clipboard.writeText(newUrl).then(alert.bind(null, 'URL Copied!'))
+                      else
+                        e = window.open(newUrl, "_blank");
+                      e.focus();
+                    }
+                }())
+              -->
+              🪄OpenLocalhost
+            </a>
+            |
+            <a class="btn btn-outline-secondary me-2" href="javascript: !function(){var t={action:'clipboard'},o='',i=document.querySelector('body > iframe[src]');if(i?o=i.getAttribute('src'):location.host.indexOf('vitecnext.no')>=0&&(o=location.href),o&&o.length>0&&o.indexOf('editor/')>=0){var n='http://localhost:3000/'+o.substr(o.indexOf('editor/')+7);'clipboard'===t.action?navigator.clipboard.writeText(n).then(alert.bind(null,'URL Copied!')):e=window.open(n,'_blank'),e.focus()}}()">
+              <!--
+                (function() {
+                    var o = {}
+                    o['action'] = 'clipboard'
+                    var href = "",
+                      iframe = document.querySelector("body > iframe[src]")
+                    if (iframe)
+                        href = iframe.getAttribute('src')
+                    else if (location.host.indexOf("vitecnext.no") >= 0)
+                        href = location.href
+                    if (href && href.length > 0 && href.indexOf("editor/") >= 0) {
+                      var querystring = href.substr(href.indexOf("editor/") + "editor/".length),
+                        newUrl = "http://localhost:3000/" + querystring
+                      if (o['action'] === 'clipboard')
+                        navigator.clipboard.writeText(newUrl).then(alert.bind(null, 'URL Copied!'))
+                      else
+                        e = window.open(newUrl, "_blank");
+                      e.focus();
+                    }
+                }())
+              -->
+              ✳️CopyLocalhost
             </a>
             |
             <a class="btn btn-outline-secondary mx-2" href="javascript: !function(){var e=location.search,t='debug-translation-keys=true',a=document.querySelector('body > iframe[src]');a?(0<=(e=a.getAttribute('src')).indexOf('debug-translation-keys')?e=e.replace(/debug-translation-keys=(true|false)/,t):0<=e.indexOf('?')&&(e=e.replace(/\?/,'?'+t+'&')),a.setAttribute('src',e)):(0<=e.indexOf('debug-translation-keys')?e=e.replace(/debug-translation-keys=(true|false)/,t):e+='&'+t,location.search=e)}();">
-              ShowTranslationKeys
+              👓ShowTranslationKeys
             </a>
             |
             <a class="btn btn-outline-secondary mx-2" href="javascript: !function(){var e=location.search,t='admin_override_locked_pageitems=true',a=document.querySelector('body > iframe[src]');a?(0<=(e=a.getAttribute('src')).indexOf('admin_override_locked_pageitems')?e=e.replace(/admin_override_locked_pageitems=(true|false)/,t):0<=e.indexOf('?')&&(e=e.replace(/\?/,'?'+t+'&')),a.setAttribute('src',e)):(0<=e.indexOf('admin_override_locked_pageitems')?e=e.replace(/admin_override_locked_pageitems=(true|false)/,t):e+='&'+t,location.search=e)}();">
-              UnlockLockedTextframes
+              🔓UnlockLockedTextframes
             </a>
             |
             <a href="javascript: !function(e,i){function t(e){var i=new URL(e);if(i)return i.hash.substr(i.hash.indexOf('/')+1)}var n,o=e.document.querySelector('iframe'),l='debug';i.indexOf('://publish.megler.local')>0&&(l='dev'),i.indexOf('://publish.qa.vitecnext.no')>0&&(l='qa'),i.indexOf('://publish.vitecnext.no')>0&&(l='prod'),o&&(n=t(o.getAttribute('src'))),n||(n=t(e.location.href)),n&&e.open(`${{debug:'https://localhost:7066',dev:'http://invoice-publish.megler.local',qa:'https://invoice-publish.qa.vitecnext.no',prod:'https://invoice-publish.vitecnext.no'}[l]}/Extras/Idml?guid=${n}&handler=Download`)}(window,window.location.href);" class="btn btn-outline-secondary mx-2"
             >
-              DownloadIdml
+              📂DownloadIdml
             </a>
             |
             <a href="javascript: !function(e){function t(e){var t=new URL(e);if(t)return t.hash.substr(t.hash.indexOf('/')+1)}var n,o=document.querySelector('iframe');if(o&&(n=t(o.getAttribute('src'))),n||(n=t(e.location.href)),n){var r=e.document.createElement('input');e.document.body.appendChild(r),r.value=n,r.select(),e.document.execCommand('Copy')}}(window);"
                  class="btn btn-outline-secondary mx-2">
-              CopyGUID
+              ➰CopyGUID
             </a>
             <p>
               Drag-and-drop these to your favorites/bookmarks bar
