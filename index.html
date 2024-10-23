@@ -36,15 +36,11 @@
               <hr>
               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
                 <div class="col pb-3">
-                  <a class="btn btn-outline-secondary" href="javascript: !function(){var e,r=(e=document.querySelector('iframe[src]'))?e.getAttribute('src'):location.href;href&&href.length>0&&href.indexOf('#create')>=0&&(r=href.replace('#create/','#extended/')),r&&r.length>=0&&window.open(r,'_blank').focus()}()">
+                  <a class="btn btn-outline-secondary" href="javascript: !function(){var e=document.querySelector('iframe[src]'),t=e?e.getAttribute('src'):location.href;t&&t.length>0&&t.indexOf('#create')>=0&&(result=t.replace('#create/','#extended/')),result&&result.length>=0&&window.open(result,'_blank').focus()}();">
                     <!--
                       !(function(){
-                          function getCurUrl() {
-                              var iframe=document.querySelector("iframe[src]"),
-                                  href = iframe ? iframe.getAttribute("src") : location.href
-                              return href
-                          }
-                          var result = getCurUrl()
+                          var iframe=document.querySelector("iframe[src]")
+                          var href = iframe ? iframe.getAttribute("src") : location.href
                           if (href && href.length > 0 && href.indexOf('#create') >= 0)
                               result=href.replace("#create/","#extended/")
                           if (result && result.length >= 0)
@@ -83,7 +79,7 @@
                   </a>
                   <br>
                   <span class="text-body-secondary">
-                    Laster ned IDML-filen (du må være innlogget på admin for at den skal virke)
+                    Laster ned IDML-filen (kun i Edit og krever admin-innlogging)
                   </span>
                 </div>
                 <div class="col pb-3">
@@ -93,7 +89,7 @@
                   </a>
                   <br>
                   <span class="text-body-secondary">
-                    Kopierer GUID for gjeldende mal (virker ikke i Create)
+                    Kopierer GUID for malen (kun i Edit)
                   </span>
                 </div>
               </div>
