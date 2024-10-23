@@ -73,8 +73,27 @@
                   </span>
                 </div>
                 <div class="col pb-3">
-                  <a href="javascript: !function(e,i){function t(e){var i=new URL(e);if(i)return i.hash.substr(i.hash.indexOf('/')+1)}var n,o=e.document.querySelector('iframe'),l='debug';i.indexOf('://publish.megler.local')>0&&(l='dev'),i.indexOf('://publish.qa.vitecnext.no')>0&&(l='qa'),i.indexOf('://publish.vitecnext.no')>0&&(l='prod'),o&&(n=t(o.getAttribute('src'))),n||(n=t(e.location.href)),n&&e.open(`${{debug:'https://localhost:7066',dev:'http://invoice-publish.megler.local',qa:'https://invoice-publish.qa.vitecnext.no',prod:'https://invoice-publish.vitecnext.no'}[l]}/Extras/Idml?guid=${n}&handler=Download`)}(window,window.location.href);" class="btn btn-outline-secondary"
-                  >
+                  <a href="javascript: !function(e,i){function n(e){var i=new URL(e);return i.hash.indexOf('#create/')>=0?null:i?i.hash.substr(i.hash.indexOf('/')+1):void 0}var t,o=e.document.querySelector('iframe'),l='debug';i.indexOf('://publish.megler.local')>0&&(l='dev'),i.indexOf('://publish.qa.vitecnext.no')>0&&(l='qa'),i.indexOf('://publish.vitecnext.no')>0&&(l='prod'),o&&(t=n(o.getAttribute('src'))),t||(t=n(e.location.href)),t?e.open(`${{debug:'https://localhost:7066',dev:'https://invoice-publish.megler.local',qa:'https://invoice-publish.qa.vitecnext.no',prod:'https://invoice-publish.vitecnext.no'}[l]}/Extras/Idml?guid=${t}&handler=Download`):alert('No GUID found. Are you *editing*?')}(window,window.location.href);" class="btn btn-outline-secondary">
+                    <!--
+                      (function(window, href){
+                        function getHash(src) {
+                            var res = new URL(src);
+                            if (res.hash.indexOf('#create/') >= 0) return null
+                            if (res) return res.hash.substr(res.hash.indexOf('/')+1)
+                        }
+                        var guid,
+                            iframe = window.document.querySelector('iframe'),
+                            environment = 'debug'
+                        var urls = {debug:'https://localhost:7066',dev:'https://invoice-publish.megler.local',qa:'https://invoice-publish.qa.vitecnext.no',prod:'https://invoice-publish.vitecnext.no'}
+                        if (href.indexOf('://publish.megler.local') > 0) environment='dev'
+                        if (href.indexOf('://publish.qa.vitecnext.no') > 0) environment='qa'
+                        if (href.indexOf('://publish.vitecnext.no') > 0) environment='prod'
+                        if (iframe) guid = getHash(iframe.getAttribute('src'))
+                        if (!guid) guid = getHash(window.location.href)
+                        if (guid) window.open(`${urls[l]}/Extras/Idml?guid=${guid}&handler=Download`)
+                        else alert('No GUID found. Are you *editing*?')
+                    }(window,window.location.href))
+                    -->
                     📂DownloadIdml
                   </a>
                   <br>
